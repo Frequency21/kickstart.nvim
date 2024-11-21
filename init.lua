@@ -81,8 +81,8 @@ vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 vim.keymap.set('i', 'jj', '<Esc>')
 vim.keymap.set('i', 'jk', '<Esc>')
 vim.keymap.set('i', 'kj', '<Esc>')
+
 -- Adds new line above cursor
--- vim.keymap.set('i', 'C-k', '<Esc>')
 vim.api.nvim_set_keymap('i', '<C-k>', '<Esc>O', { noremap = true, silent = true })
 
 vim.keymap.set('n', '<leader>b', function()
