@@ -89,9 +89,11 @@ vim.keymap.set('c', '<C-B>', '<Left>')
 -- Adds new line above cursor
 vim.api.nvim_set_keymap('i', '<C-k>', '<Esc>O', { noremap = true, silent = true })
 
-vim.keymap.set('n', '<leader>b', function()
-  vim.cmd ':ls'
-end)
+-- disabled for breakpoints
+-- vim.keymap.set('n', '<leader>b', function()
+--   vim.cmd ':ls'
+-- end)
+vim.keymap.set('n', '<C-s>', ':w<CR>', { noremap = true, silent = true })
 
 -- Diagnostic keymaps
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
@@ -652,7 +654,8 @@ require('lazy').setup({
         python = { 'isort', 'black' },
         --
         -- You can use 'stop_after_first' to run the first available formatter from the list
-        -- javascript = { "prettierd", "prettier", stop_after_first = true },
+        javascript = { 'prettierd', 'prettier', stop_after_first = true },
+        typescript = { 'prettierd', 'prettier', stop_after_first = true },
       },
     },
   },
